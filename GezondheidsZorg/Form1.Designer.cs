@@ -31,9 +31,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.box_Filter = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Btn_contract = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_arts = new System.Windows.Forms.Label();
@@ -66,11 +66,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.dropdown = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
+            this.Dropdown = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -100,12 +100,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Zoeken naar:";
             // 
-            // textBox1
+            // box_Filter
             // 
-            this.textBox1.Location = new System.Drawing.Point(355, 150);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.box_Filter.Location = new System.Drawing.Point(355, 150);
+            this.box_Filter.Name = "box_Filter";
+            this.box_Filter.Size = new System.Drawing.Size(100, 20);
+            this.box_Filter.TabIndex = 4;
             // 
             // button1
             // 
@@ -116,14 +116,14 @@
             this.button1.Text = "Verwijder";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Btn_contract
             // 
-            this.button2.Location = new System.Drawing.Point(464, 194);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Verleng Contract";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_contract.Location = new System.Drawing.Point(464, 194);
+            this.Btn_contract.Name = "Btn_contract";
+            this.Btn_contract.Size = new System.Drawing.Size(118, 23);
+            this.Btn_contract.TabIndex = 7;
+            this.Btn_contract.Text = "Verleng Contract";
+            this.Btn_contract.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -396,15 +396,6 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "Adres: ";
             // 
-            // dropdown
-            // 
-            this.dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdown.FormattingEnabled = true;
-            this.dropdown.Location = new System.Drawing.Point(87, 147);
-            this.dropdown.Name = "dropdown";
-            this.dropdown.Size = new System.Drawing.Size(121, 21);
-            this.dropdown.TabIndex = 43;
-            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -442,6 +433,15 @@
             this.Btn_filter.UseVisualStyleBackColor = true;
             this.Btn_filter.Click += new System.EventHandler(this.Btn_filter_Click);
             // 
+            // Dropdown
+            // 
+            this.Dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Dropdown.FormattingEnabled = true;
+            this.Dropdown.Location = new System.Drawing.Point(87, 147);
+            this.Dropdown.Name = "Dropdown";
+            this.Dropdown.Size = new System.Drawing.Size(121, 21);
+            this.Dropdown.TabIndex = 43;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,7 +451,7 @@
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dropdown);
+            this.Controls.Add(this.Dropdown);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox11);
@@ -484,9 +484,9 @@
             this.Controls.Add(this.lbl_arts);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Btn_contract);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.box_Filter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -505,9 +505,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox box_Filter;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_contract;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_arts;
@@ -540,11 +540,11 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox dropdown;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button Btn_filter;
+        private System.Windows.Forms.ComboBox Dropdown;
     }
 }
 
