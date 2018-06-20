@@ -8,5 +8,6 @@ namespace GezondheidsZorg
 {
     class Klant
     {
+        public int KlantID { get; set; }
     }
 }
