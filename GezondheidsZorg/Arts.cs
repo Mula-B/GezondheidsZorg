@@ -13,8 +13,6 @@ namespace GezondheidsZorg
         public string Achternaam { get; set; }
         public string Adres { get; set; }
         public string Postcode { get; set; }
-        public int Telnummer { get; set; }
-        public string Email { get; set; }
         public DateTime Einddatum { get; set; }
         
     }
