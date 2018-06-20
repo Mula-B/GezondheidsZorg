@@ -9,6 +9,6 @@ namespace GezondheidsZorg
     class Verzekering
     {
         public int VerzekeringID { get; set; }
-        public string VerzekeringNaam { get;set }
+        public string VerzekeringNaam { get; set; }
     }
 }
