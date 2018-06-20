@@ -57,6 +57,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -309,11 +315,67 @@
             this.button5.Text = "Medicatie toewijzen";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(275, 443);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(90, 13);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Soort verzekering";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(371, 441);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(127, 20);
+            this.textBox6.TabIndex = 30;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(371, 466);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(127, 23);
+            this.button6.TabIndex = 31;
+            this.button6.Text = "Verzekering toevoegen";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(371, 532);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(127, 23);
+            this.button7.TabIndex = 34;
+            this.button7.Text = "Medicatie toevoegen";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(371, 507);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(127, 20);
+            this.textBox7.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(275, 509);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Soort Medicatie";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 603);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label11);
@@ -384,6 +446,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label13;
     }
 }
 
