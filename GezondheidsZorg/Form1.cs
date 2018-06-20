@@ -17,14 +17,26 @@ namespace GezondheidsZorg
             InitializeComponent();
         }
 
-        
+        int index;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            List<string> lijst = new List<string>() { "Klant", "Arts" };
+            dropdown.DataSource = lijst;
 
+            Btn_filter_Click(sender, e);
         }
 
-        private void label2_Click(object sender, EventArgs e)
+
+        private void Btn_filter_Click(object sender, EventArgs e)
+        {
+            index = dropdown.SelectedIndex;
+
+            
+        }
+    
+
+    private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -43,5 +55,7 @@ namespace GezondheidsZorg
         {
 
         }
+
+        
     }
 }
