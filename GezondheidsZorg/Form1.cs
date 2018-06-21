@@ -24,7 +24,14 @@ namespace GezondheidsZorg
         {
             using (var db = new DatabaseContext())
             {
+
+
                 
+
+
+
+
+
             }
         }
 
@@ -57,21 +64,16 @@ namespace GezondheidsZorg
 
         }
 
-
-        //Klant toevoegen TODO
         private void klntAdd_Click(object sender, EventArgs e)
         {
-            string artsKlant = artsComboBox.Text;
-            string klntverz = klntVerz.Text;
             string klantvoor = klntvoornaam.Text;
             string klantacht = klntachternaam.Text;
             string klantadres = klntadres.Text;
             string klantpostcode = klntpostcode.Text;
 
-
+            
         }
 
-        //Arts Toevoegen
         private void artsAdd_Click(object sender, EventArgs e)
         {
             string artsvoor = artsvoornaam.Text;
@@ -92,12 +94,19 @@ namespace GezondheidsZorg
                             select b;
 
                 dataGridView1.DataSource = query.ToList();
-                       
+                artsvoornaam.Text = string.Empty;
+                artsachternaam.Text = string.Empty;
+                artsAdres.Text = string.Empty;
+                artspostcode.Text = string.Empty;
+                einddatum.Text = string.Empty;
+
+
+
+
             }
 
         }
-        
-        //Dropdown menu datagridview1
+
         private void Dropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Dropdown.SelectedItem == "Arts")
@@ -124,7 +133,6 @@ namespace GezondheidsZorg
             }
         }
 
-        //Arts dropdownmenu TODO
         private void artsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             using (DatabaseContext a = new DatabaseContext())
@@ -133,12 +141,6 @@ namespace GezondheidsZorg
                 artsComboBox.ValueMember = "ArtsID";
                 artsComboBox.DisplayMember = "Voornaam";
             }
-        }
-
-        //Verwijder TODO
-        private void verwijderRow_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
