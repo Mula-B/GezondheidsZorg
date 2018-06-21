@@ -30,8 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-=======
+
             this.label1 = new System.Windows.Forms.Label();
             this.box_Filter = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -73,7 +72,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
             this.Dropdown = new System.Windows.Forms.ComboBox();
->>>>>>> f9fcdf97cfd7c057ffba8914c32170f448a8c89b
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -83,23 +82,23 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-<<<<<<< HEAD
+
             this.dataGridView1.Size = new System.Drawing.Size(529, 132);
-=======
+
             this.dataGridView1.Size = new System.Drawing.Size(591, 131);
->>>>>>> f9fcdf97cfd7c057ffba8914c32170f448a8c89b
+
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
+
             this.dataGridView2.Location = new System.Drawing.Point(12, 217);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(157, 176);
             this.dataGridView2.TabIndex = 1;
             // 
-=======
+
             this.dataGridView2.Location = new System.Drawing.Point(12, 221);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(191, 196);
@@ -456,14 +455,14 @@
             this.Dropdown.Size = new System.Drawing.Size(121, 21);
             this.Dropdown.TabIndex = 43;
             // 
->>>>>>> f9fcdf97cfd7c057ffba8914c32170f448a8c89b
+
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.ClientSize = new System.Drawing.Size(562, 452);
-=======
+
             this.ClientSize = new System.Drawing.Size(612, 603);
             this.Controls.Add(this.Btn_filter);
             this.Controls.Add(this.comboBox3);
@@ -506,22 +505,22 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.box_Filter);
             this.Controls.Add(this.label1);
->>>>>>> f9fcdf97cfd7c057ffba8914c32170f448a8c89b
+
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
-=======
+
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
->>>>>>> f9fcdf97cfd7c057ffba8914c32170f448a8c89b
+
 
         }
 
@@ -529,8 +528,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
-<<<<<<< HEAD
-=======
+
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox box_Filter;
         private System.Windows.Forms.Button button1;
@@ -572,7 +570,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button Btn_filter;
         private System.Windows.Forms.ComboBox Dropdown;
->>>>>>> f9fcdf97cfd7c057ffba8914c32170f448a8c89b
+
     }
 }
 
