@@ -22,25 +22,25 @@ namespace GezondheidsZorg
         {
             using (var db = new DatabaseContext())
             {
-                
-                Dropdown.DataSource 
+
+
+                Dropdown.DataSource
+
 
 
 
 
             }
-
-
-            
         }
+
+
+
 
 
         private void Btn_filter_Click(object sender, EventArgs e)
         {
 
         }
-
-
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -62,6 +62,25 @@ namespace GezondheidsZorg
 
         }
 
+        private void klntAdd_Click(object sender, EventArgs e)
+        {
+            string klantvoor = klntvoornaam.Text;
+            string klantacht = klntachternaam.Text;
+            string klantadres = klntadres.Text;
+            string klantpostcode = klntpostcode.Text;
 
+
+        }
+
+        private void artsAdd_Click(object sender, EventArgs e)
+        {
+            string artsvoor = artsvoornaam.Text;
+            string artsacht = artsachternaam.Text;
+            string artsadres = artsAdres.Text;
+            string artspost = artspostcode.Text;
+
+            
+
+        }
     }
 }
