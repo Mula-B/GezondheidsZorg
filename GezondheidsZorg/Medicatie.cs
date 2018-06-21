@@ -10,7 +10,10 @@ namespace GezondheidsZorg
     class Medicatie
     {
         [Key]
-        public string MedicatieID { get; set; }
+        public int MedicatieID { get; set; }
         public string MedicatieNaam { get; set; }
+
+        public int KlantID { get; set; }
+        public virtual Klant Klant { get; set; }
     }
 }

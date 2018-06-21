@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GezondheidsZorg
 {
-    class Database
+    class DatabaseContext : DbContext
     {
         public DbSet<Klant> klant { get; set; }
         public DbSet<Arts> arts { get; set; }

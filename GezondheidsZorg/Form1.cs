@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace GezondheidsZorg
 {
@@ -17,25 +18,25 @@ namespace GezondheidsZorg
             InitializeComponent();
         }
 
-        Database connect = new Database();
-        int index;
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<string> lijst = new List<string>() { "Klant", "Arts" };
-            Dropdown.DataSource = lijst;
+            using (var db = new DatabaseContext())
+            {
+                
+                
 
-            Btn_filter_Click(sender, e);
+
+
+
+            }
+
+
+            
         }
 
 
         private void Btn_filter_Click(object sender, EventArgs e)
         {
-            index = Dropdown.SelectedIndex;
-
-
-
-
 
         }
 

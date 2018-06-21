@@ -15,5 +15,7 @@ namespace GezondheidsZorg
         public string Achternaam { get; set; }
         public string Adres { get; set; }
         public string Postcode { get; set; }
+
+        public virtual List<Medicatie> Medicaties { get; set; }
     }
 }
