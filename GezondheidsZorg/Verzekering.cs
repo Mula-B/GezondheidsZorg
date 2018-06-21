@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace GezondheidsZorg
 {
-    class Medicatie
+    class Verzekering
     {
         [Key]
-        public string MedicatieID { get; set; }
-        public string MedicatieNaam { get; set; }
+        public int VerzekeringID { get; set; }
+        public string VerzekeringNaam { get; set; }
     }
 }
