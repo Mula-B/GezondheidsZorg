@@ -64,7 +64,10 @@
     <Compile Include="Medicatie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
     <Compile Include="Verzekering.cs" />
+>>>>>>> f9fcdf97cfd7c057ffba8914c32170f448a8c89b
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
