@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.box_Filter = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -71,8 +70,9 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
             this.Dropdown = new System.Windows.Forms.ComboBox();
+            this.einddatum = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -82,14 +82,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(591, 131);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 221);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(191, 196);
-            this.dataGridView2.TabIndex = 1;
             // 
             // label1
             // 
@@ -225,7 +217,7 @@
             // 
             // artsvoornaam
             // 
-            this.artsvoornaam.Location = new System.Drawing.Point(82, 443);
+            this.artsvoornaam.Location = new System.Drawing.Point(89, 230);
             this.artsvoornaam.Name = "artsvoornaam";
             this.artsvoornaam.Size = new System.Drawing.Size(100, 20);
             this.artsvoornaam.TabIndex = 21;
@@ -233,7 +225,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 446);
+            this.label9.Location = new System.Drawing.Point(25, 233);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 22;
@@ -242,7 +234,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 472);
+            this.label10.Location = new System.Drawing.Point(16, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 13);
             this.label10.TabIndex = 23;
@@ -250,14 +242,14 @@
             // 
             // artsachternaam
             // 
-            this.artsachternaam.Location = new System.Drawing.Point(82, 469);
+            this.artsachternaam.Location = new System.Drawing.Point(89, 256);
             this.artsachternaam.Name = "artsachternaam";
             this.artsachternaam.Size = new System.Drawing.Size(100, 20);
             this.artsachternaam.TabIndex = 24;
             // 
             // artsAdd
             // 
-            this.artsAdd.Location = new System.Drawing.Point(80, 544);
+            this.artsAdd.Location = new System.Drawing.Point(87, 368);
             this.artsAdd.Name = "artsAdd";
             this.artsAdd.Size = new System.Drawing.Size(102, 23);
             this.artsAdd.TabIndex = 25;
@@ -368,7 +360,7 @@
             // 
             // artspostcode
             // 
-            this.artspostcode.Location = new System.Drawing.Point(82, 520);
+            this.artspostcode.Location = new System.Drawing.Point(89, 307);
             this.artspostcode.Name = "artspostcode";
             this.artspostcode.Size = new System.Drawing.Size(100, 20);
             this.artspostcode.TabIndex = 42;
@@ -376,7 +368,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(19, 523);
+            this.label16.Location = new System.Drawing.Point(26, 310);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 41;
@@ -384,7 +376,7 @@
             // 
             // artsAdres
             // 
-            this.artsAdres.Location = new System.Drawing.Point(82, 495);
+            this.artsAdres.Location = new System.Drawing.Point(89, 282);
             this.artsAdres.Name = "artsAdres";
             this.artsAdres.Size = new System.Drawing.Size(100, 20);
             this.artsAdres.TabIndex = 40;
@@ -392,7 +384,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(36, 498);
+            this.label17.Location = new System.Drawing.Point(43, 285);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 13);
             this.label17.TabIndex = 39;
@@ -444,11 +436,29 @@
             this.Dropdown.Size = new System.Drawing.Size(121, 21);
             this.Dropdown.TabIndex = 43;
             // 
+            // einddatum
+            // 
+            this.einddatum.Location = new System.Drawing.Point(89, 335);
+            this.einddatum.Name = "einddatum";
+            this.einddatum.Size = new System.Drawing.Size(100, 20);
+            this.einddatum.TabIndex = 48;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 338);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Einddatum";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 603);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.einddatum);
             this.Controls.Add(this.Btn_filter);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -490,13 +500,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.box_Filter);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,7 +513,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox box_Filter;
@@ -548,7 +555,8 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button Btn_filter;
         private System.Windows.Forms.ComboBox Dropdown;
-
+        private System.Windows.Forms.TextBox einddatum;
+        private System.Windows.Forms.Label label2;
     }
 }
 

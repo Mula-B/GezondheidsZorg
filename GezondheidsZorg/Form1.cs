@@ -75,8 +75,24 @@ namespace GezondheidsZorg
             string artsacht = artsachternaam.Text;
             string artsadres = artsAdres.Text;
             string artspost = artspostcode.Text;
+            string artseind = einddatum.Text;
+            DateTime artseinddatum = DateTime.Parse(artseind);
 
-            
+            using (var db = new DatabaseContext())
+            {
+                var arts = new Arts { Voornaam = artsvoor, Achternaam = artsacht, Adres = artsadres, Postcode = artspost, Einddatum = artseinddatum  };
+                db.arts.Add(arts);
+                db.SaveChanges();
+
+                var query = from b in db.arts
+                            orderby b.ArtsID
+                            select b;
+
+                dataGridView1.DataSource = query.ToList();
+
+                            
+                        
+            }
 
         }
     }
