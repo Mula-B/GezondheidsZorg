@@ -352,12 +352,14 @@
             // 
             // artsComboBox
             // 
+            this.artsComboBox.DisplayMember = "Test";
             this.artsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.artsComboBox.FormattingEnabled = true;
             this.artsComboBox.Location = new System.Drawing.Point(292, 269);
             this.artsComboBox.Name = "artsComboBox";
             this.artsComboBox.Size = new System.Drawing.Size(121, 21);
             this.artsComboBox.TabIndex = 44;
+            this.artsComboBox.Tag = "";
             this.artsComboBox.SelectedIndexChanged += new System.EventHandler(this.artsComboBox_SelectedIndexChanged);
             // 
             // comboBox3

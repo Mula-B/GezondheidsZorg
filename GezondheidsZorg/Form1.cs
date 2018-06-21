@@ -135,12 +135,22 @@ namespace GezondheidsZorg
 
         private void artsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (DatabaseContext a = new DatabaseContext())
+            using (var db = new DatabaseContext())
             {
-                artsComboBox.DataSource = a.arts;
-                artsComboBox.ValueMember = "ArtsID";
+                var query = from a in db.arts
+                            select a;
+
+                artsComboBox.DataSource = query.ToList();
                 artsComboBox.DisplayMember = "Voornaam";
+                artsComboBox.ValueMember = "ArtsID";            
             }
         }
-    }
+        //Verwijder TODO
+        private void verwijderRow_Click(object sender, EventArgs e)
+        {
+
+        }
+     }
 }
+    
+
