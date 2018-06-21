@@ -31,12 +31,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.box_Filter = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.verwijderRow = new System.Windows.Forms.Button();
             this.Btn_contract = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbl_arts = new System.Windows.Forms.Label();
-            this.lbl_verzekering = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,12 +62,12 @@
             this.artsAdres = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.artsComboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
             this.Dropdown = new System.Windows.Forms.ComboBox();
             this.einddatum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.klntVerz = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,14 +95,15 @@
             this.box_Filter.Size = new System.Drawing.Size(100, 20);
             this.box_Filter.TabIndex = 4;
             // 
-            // button1
+            // verwijderRow
             // 
-            this.button1.Location = new System.Drawing.Point(246, 149);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Verwijder";
-            this.button1.UseVisualStyleBackColor = true;
+            this.verwijderRow.Location = new System.Drawing.Point(246, 149);
+            this.verwijderRow.Name = "verwijderRow";
+            this.verwijderRow.Size = new System.Drawing.Size(75, 23);
+            this.verwijderRow.TabIndex = 6;
+            this.verwijderRow.Text = "Verwijder";
+            this.verwijderRow.UseVisualStyleBackColor = true;
+            this.verwijderRow.Click += new System.EventHandler(this.verwijderRow_Click);
             // 
             // Btn_contract
             // 
@@ -116,43 +113,6 @@
             this.Btn_contract.TabIndex = 7;
             this.Btn_contract.Text = "Verleng Contract";
             this.Btn_contract.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(248, 221);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Arts: ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(210, 238);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Verzekering: ";
-            // 
-            // lbl_arts
-            // 
-            this.lbl_arts.AutoSize = true;
-            this.lbl_arts.Location = new System.Drawing.Point(286, 221);
-            this.lbl_arts.Name = "lbl_arts";
-            this.lbl_arts.Size = new System.Drawing.Size(30, 13);
-            this.lbl_arts.TabIndex = 10;
-            this.lbl_arts.Text = "(arts)";
-            // 
-            // lbl_verzekering
-            // 
-            this.lbl_verzekering.AutoSize = true;
-            this.lbl_verzekering.Location = new System.Drawing.Point(289, 238);
-            this.lbl_verzekering.Name = "lbl_verzekering";
-            this.lbl_verzekering.Size = new System.Drawing.Size(68, 13);
-            this.lbl_verzekering.TabIndex = 11;
-            this.lbl_verzekering.Text = "(verzekering)";
             // 
             // label5
             // 
@@ -394,22 +354,11 @@
             // 
             this.artsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.artsComboBox.FormattingEnabled = true;
-            this.artsComboBox.Items.AddRange(new object[] {
-            "test"});
             this.artsComboBox.Location = new System.Drawing.Point(292, 269);
             this.artsComboBox.Name = "artsComboBox";
             this.artsComboBox.Size = new System.Drawing.Size(121, 21);
             this.artsComboBox.TabIndex = 44;
             this.artsComboBox.SelectedIndexChanged += new System.EventHandler(this.artsComboBox_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(292, 296);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 45;
             // 
             // comboBox3
             // 
@@ -459,16 +408,23 @@
             this.label2.TabIndex = 49;
             this.label2.Text = "Einddatum";
             // 
+            // klntVerz
+            // 
+            this.klntVerz.Location = new System.Drawing.Point(292, 298);
+            this.klntVerz.Name = "klntVerz";
+            this.klntVerz.Size = new System.Drawing.Size(100, 20);
+            this.klntVerz.TabIndex = 50;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 603);
+            this.Controls.Add(this.klntVerz);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.einddatum);
             this.Controls.Add(this.Btn_filter);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.artsComboBox);
             this.Controls.Add(this.Dropdown);
             this.Controls.Add(this.artspostcode);
@@ -499,12 +455,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lbl_verzekering);
-            this.Controls.Add(this.lbl_arts);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Btn_contract);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.verwijderRow);
             this.Controls.Add(this.box_Filter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -523,12 +475,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox box_Filter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button verwijderRow;
         private System.Windows.Forms.Button Btn_contract;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_arts;
-        private System.Windows.Forms.Label lbl_verzekering;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -558,12 +506,12 @@
         private System.Windows.Forms.TextBox artsAdres;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox artsComboBox;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button Btn_filter;
         private System.Windows.Forms.ComboBox Dropdown;
         private System.Windows.Forms.TextBox einddatum;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox klntVerz;
     }
 }
 
