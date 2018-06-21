@@ -30,7 +30,6 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-
             this.label1 = new System.Windows.Forms.Label();
             this.box_Filter = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,36 +42,35 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.klntvoornaam = new System.Windows.Forms.TextBox();
+            this.klntachternaam = new System.Windows.Forms.TextBox();
+            this.klntAdd = new System.Windows.Forms.Button();
+            this.artsvoornaam = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.artsachternaam = new System.Windows.Forms.TextBox();
+            this.artsAdd = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.soortVerz = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.soortMed = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.klntadres = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.klntpostcode = new System.Windows.Forms.TextBox();
+            this.artspostcode = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.artsAdres = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
             this.Dropdown = new System.Windows.Forms.ComboBox();
-
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -82,23 +80,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-
-            this.dataGridView1.Size = new System.Drawing.Size(529, 132);
-
             this.dataGridView1.Size = new System.Drawing.Size(591, 131);
-
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
-            this.dataGridView2.Location = new System.Drawing.Point(12, 217);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(157, 176);
-            this.dataGridView2.TabIndex = 1;
-            // 
-
             this.dataGridView2.Location = new System.Drawing.Point(12, 221);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(191, 196);
@@ -212,35 +199,36 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Achternaam:";
             // 
-            // textBox2
+            // klntvoornaam
             // 
-            this.textBox2.Location = new System.Drawing.Point(292, 324);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 18;
+            this.klntvoornaam.Location = new System.Drawing.Point(292, 324);
+            this.klntvoornaam.Name = "klntvoornaam";
+            this.klntvoornaam.Size = new System.Drawing.Size(100, 20);
+            this.klntvoornaam.TabIndex = 18;
             // 
-            // textBox3
+            // klntachternaam
             // 
-            this.textBox3.Location = new System.Drawing.Point(292, 352);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 19;
+            this.klntachternaam.Location = new System.Drawing.Point(292, 352);
+            this.klntachternaam.Name = "klntachternaam";
+            this.klntachternaam.Size = new System.Drawing.Size(100, 20);
+            this.klntachternaam.TabIndex = 19;
             // 
-            // button3
+            // klntAdd
             // 
-            this.button3.Location = new System.Drawing.Point(290, 387);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Klant toevoegen";
-            this.button3.UseVisualStyleBackColor = true;
+            this.klntAdd.Location = new System.Drawing.Point(290, 387);
+            this.klntAdd.Name = "klntAdd";
+            this.klntAdd.Size = new System.Drawing.Size(102, 23);
+            this.klntAdd.TabIndex = 20;
+            this.klntAdd.Text = "Klant toevoegen";
+            this.klntAdd.UseVisualStyleBackColor = true;
+            this.klntAdd.Click += new System.EventHandler(this.klntAdd_Click);
             // 
-            // textBox4
+            // artsvoornaam
             // 
-            this.textBox4.Location = new System.Drawing.Point(82, 443);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 21;
+            this.artsvoornaam.Location = new System.Drawing.Point(82, 443);
+            this.artsvoornaam.Name = "artsvoornaam";
+            this.artsvoornaam.Size = new System.Drawing.Size(100, 20);
+            this.artsvoornaam.TabIndex = 21;
             // 
             // label9
             // 
@@ -260,21 +248,22 @@
             this.label10.TabIndex = 23;
             this.label10.Text = "Achternaam:";
             // 
-            // textBox5
+            // artsachternaam
             // 
-            this.textBox5.Location = new System.Drawing.Point(82, 469);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 24;
+            this.artsachternaam.Location = new System.Drawing.Point(82, 469);
+            this.artsachternaam.Name = "artsachternaam";
+            this.artsachternaam.Size = new System.Drawing.Size(100, 20);
+            this.artsachternaam.TabIndex = 24;
             // 
-            // button4
+            // artsAdd
             // 
-            this.button4.Location = new System.Drawing.Point(80, 544);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 23);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "Arts toevoegen";
-            this.button4.UseVisualStyleBackColor = true;
+            this.artsAdd.Location = new System.Drawing.Point(80, 544);
+            this.artsAdd.Name = "artsAdd";
+            this.artsAdd.Size = new System.Drawing.Size(102, 23);
+            this.artsAdd.TabIndex = 25;
+            this.artsAdd.Text = "Arts toevoegen";
+            this.artsAdd.UseVisualStyleBackColor = true;
+            this.artsAdd.Click += new System.EventHandler(this.artsAdd_Click);
             // 
             // label11
             // 
@@ -303,12 +292,12 @@
             this.label12.TabIndex = 29;
             this.label12.Text = "Soort verzekering";
             // 
-            // textBox6
+            // soortVerz
             // 
-            this.textBox6.Location = new System.Drawing.Point(389, 429);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(127, 20);
-            this.textBox6.TabIndex = 30;
+            this.soortVerz.Location = new System.Drawing.Point(389, 429);
+            this.soortVerz.Name = "soortVerz";
+            this.soortVerz.Size = new System.Drawing.Size(127, 20);
+            this.soortVerz.TabIndex = 30;
             // 
             // button6
             // 
@@ -329,12 +318,12 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // textBox7
+            // soortMed
             // 
-            this.textBox7.Location = new System.Drawing.Point(389, 487);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(127, 20);
-            this.textBox7.TabIndex = 33;
+            this.soortMed.Location = new System.Drawing.Point(389, 487);
+            this.soortMed.Name = "soortMed";
+            this.soortMed.Size = new System.Drawing.Size(127, 20);
+            this.soortMed.TabIndex = 33;
             // 
             // label13
             // 
@@ -354,12 +343,12 @@
             this.label14.TabIndex = 35;
             this.label14.Text = "Adres: ";
             // 
-            // textBox8
+            // klntadres
             // 
-            this.textBox8.Location = new System.Drawing.Point(482, 268);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 36;
+            this.klntadres.Location = new System.Drawing.Point(482, 268);
+            this.klntadres.Name = "klntadres";
+            this.klntadres.Size = new System.Drawing.Size(100, 20);
+            this.klntadres.TabIndex = 36;
             // 
             // label15
             // 
@@ -370,19 +359,19 @@
             this.label15.TabIndex = 37;
             this.label15.Text = "Postcode: ";
             // 
-            // textBox9
+            // klntpostcode
             // 
-            this.textBox9.Location = new System.Drawing.Point(482, 298);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 38;
+            this.klntpostcode.Location = new System.Drawing.Point(482, 298);
+            this.klntpostcode.Name = "klntpostcode";
+            this.klntpostcode.Size = new System.Drawing.Size(100, 20);
+            this.klntpostcode.TabIndex = 38;
             // 
-            // textBox10
+            // artspostcode
             // 
-            this.textBox10.Location = new System.Drawing.Point(82, 520);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 42;
+            this.artspostcode.Location = new System.Drawing.Point(82, 520);
+            this.artspostcode.Name = "artspostcode";
+            this.artspostcode.Size = new System.Drawing.Size(100, 20);
+            this.artspostcode.TabIndex = 42;
             // 
             // label16
             // 
@@ -393,12 +382,12 @@
             this.label16.TabIndex = 41;
             this.label16.Text = "Postcode: ";
             // 
-            // textBox11
+            // artsAdres
             // 
-            this.textBox11.Location = new System.Drawing.Point(82, 495);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 40;
+            this.artsAdres.Location = new System.Drawing.Point(82, 495);
+            this.artsAdres.Name = "artsAdres";
+            this.artsAdres.Size = new System.Drawing.Size(100, 20);
+            this.artsAdres.TabIndex = 40;
             // 
             // label17
             // 
@@ -455,44 +444,40 @@
             this.Dropdown.Size = new System.Drawing.Size(121, 21);
             this.Dropdown.TabIndex = 43;
             // 
-
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(562, 452);
-
             this.ClientSize = new System.Drawing.Size(612, 603);
             this.Controls.Add(this.Btn_filter);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Dropdown);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.artspostcode);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.artsAdres);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.klntpostcode);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.klntadres);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.soortMed);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.soortVerz);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.artsAdd);
+            this.Controls.Add(this.artsachternaam);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.artsvoornaam);
+            this.Controls.Add(this.klntAdd);
+            this.Controls.Add(this.klntachternaam);
+            this.Controls.Add(this.klntvoornaam);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -505,22 +490,15 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.box_Filter);
             this.Controls.Add(this.label1);
-
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
-
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.ResumeLayout(false);
-
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
 
         }
 
@@ -541,29 +519,29 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox klntvoornaam;
+        private System.Windows.Forms.TextBox klntachternaam;
+        private System.Windows.Forms.Button klntAdd;
+        private System.Windows.Forms.TextBox artsvoornaam;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox artsachternaam;
+        private System.Windows.Forms.Button artsAdd;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox soortVerz;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox soortMed;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox klntadres;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox klntpostcode;
+        private System.Windows.Forms.TextBox artspostcode;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox artsAdres;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
