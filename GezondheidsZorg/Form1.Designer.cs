@@ -65,7 +65,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.artsAdres = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.artsComboBox = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
@@ -390,14 +390,17 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "Adres: ";
             // 
-            // comboBox1
+            // artsComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(292, 269);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 44;
+            this.artsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.artsComboBox.FormattingEnabled = true;
+            this.artsComboBox.Items.AddRange(new object[] {
+            "test"});
+            this.artsComboBox.Location = new System.Drawing.Point(292, 269);
+            this.artsComboBox.Name = "artsComboBox";
+            this.artsComboBox.Size = new System.Drawing.Size(121, 21);
+            this.artsComboBox.TabIndex = 44;
+            this.artsComboBox.SelectedIndexChanged += new System.EventHandler(this.artsComboBox_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -431,10 +434,14 @@
             // 
             this.Dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Dropdown.FormattingEnabled = true;
+            this.Dropdown.Items.AddRange(new object[] {
+            "Arts",
+            "Klant"});
             this.Dropdown.Location = new System.Drawing.Point(87, 147);
             this.Dropdown.Name = "Dropdown";
             this.Dropdown.Size = new System.Drawing.Size(121, 21);
             this.Dropdown.TabIndex = 43;
+            this.Dropdown.SelectedIndexChanged += new System.EventHandler(this.Dropdown_SelectedIndexChanged);
             // 
             // einddatum
             // 
@@ -462,7 +469,7 @@
             this.Controls.Add(this.Btn_filter);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.artsComboBox);
             this.Controls.Add(this.Dropdown);
             this.Controls.Add(this.artspostcode);
             this.Controls.Add(this.label16);
@@ -550,7 +557,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox artsAdres;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox artsComboBox;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button Btn_filter;

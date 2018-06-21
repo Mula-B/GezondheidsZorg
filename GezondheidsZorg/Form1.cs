@@ -18,13 +18,15 @@ namespace GezondheidsZorg
             InitializeComponent();
         }
 
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             using (var db = new DatabaseContext())
             {
 
 
-                Dropdown.DataSource
+                
 
 
 
@@ -97,6 +99,42 @@ namespace GezondheidsZorg
                         
             }
 
+        }
+
+        private void Dropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Dropdown.SelectedItem == "Arts")
+            {
+               using (var db = new DatabaseContext())
+                {
+                    var query = from a in db.arts
+                                orderby a.ArtsID
+                                select a;
+
+                    dataGridView1.DataSource = query.ToList();
+                }
+            }
+            else
+            {
+                using (var db = new DatabaseContext())
+                {
+                    var query = from k in db.klant
+                                orderby k.KlantID
+                                select k;
+
+                    dataGridView1.DataSource = query.ToList();
+                }
+            }
+        }
+
+        private void artsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (DatabaseContext a = new DatabaseContext())
+            {
+                artsComboBox.DataSource = a.arts;
+                artsComboBox.ValueMember = "ArtsID";
+                artsComboBox.DisplayMember = "Voornaam";
+            }
         }
     }
 }
