@@ -71,11 +71,18 @@ namespace GezondheidsZorg
             string klantadres = klntadres.Text;
             string klantpostcode = klntpostcode.Text;
 
+
+            //datagridview2
             
         }
 
         private void artsAdd_Click(object sender, EventArgs e)
         {
+            if(artsvoornaam.Text + artsachternaam.Text + artsAdres.Text + artspostcode.Text + einddatum.Text == "")
+            {
+                MessageBox.Show("Geen arts gegevens opgegeven!");
+            }
+
             string artsvoor = artsvoornaam.Text;
             string artsacht = artsachternaam.Text;
             string artsadres = artsAdres.Text;
@@ -94,14 +101,12 @@ namespace GezondheidsZorg
                             select b;
 
                 dataGridView1.DataSource = query.ToList();
+
                 artsvoornaam.Text = string.Empty;
                 artsachternaam.Text = string.Empty;
                 artsAdres.Text = string.Empty;
                 artspostcode.Text = string.Empty;
                 einddatum.Text = string.Empty;
-
-
-
 
             }
 
@@ -137,13 +142,12 @@ namespace GezondheidsZorg
         {
             using (var db = new DatabaseContext())
             {
-                var query = from a in db.arts
-                            select a;
-
-                artsComboBox.DataSource = query.ToList();
+                artsComboBox.ValueMember = "ArtsID";
                 artsComboBox.DisplayMember = "Voornaam";
-                artsComboBox.ValueMember = "ArtsID";            
+                artsComboBox.DataSource = db.arts;
             }
+
+            string arts = artsComboBox.SelectedValue.ToString();
         }
         //Verwijder TODO
         private void verwijderRow_Click(object sender, EventArgs e)

@@ -68,7 +68,9 @@
             this.einddatum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.klntVerz = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -76,7 +78,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(591, 131);
+            this.dataGridView1.Size = new System.Drawing.Size(274, 131);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -417,11 +419,20 @@
             this.klntVerz.Size = new System.Drawing.Size(100, 20);
             this.klntVerz.TabIndex = 50;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(308, 12);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(274, 131);
+            this.dataGridView2.TabIndex = 51;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 603);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.klntVerz);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.einddatum);
@@ -466,6 +477,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,6 +526,7 @@
         private System.Windows.Forms.TextBox einddatum;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox klntVerz;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 
