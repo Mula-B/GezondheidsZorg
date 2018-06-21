@@ -71,7 +71,7 @@ namespace GezondheidsZorg
             string klantadres = klntadres.Text;
             string klantpostcode = klntpostcode.Text;
 
-
+            
         }
 
         private void artsAdd_Click(object sender, EventArgs e)
@@ -94,9 +94,15 @@ namespace GezondheidsZorg
                             select b;
 
                 dataGridView1.DataSource = query.ToList();
+                artsvoornaam.Text = string.Empty;
+                artsachternaam.Text = string.Empty;
+                artsAdres.Text = string.Empty;
+                artspostcode.Text = string.Empty;
+                einddatum.Text = string.Empty;
 
-                            
-                        
+
+
+
             }
 
         }
