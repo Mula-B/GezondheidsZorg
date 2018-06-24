@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,11 +64,24 @@
     </Compile>
     <Compile Include="Klant.cs" />
     <Compile Include="Medicatie.cs" />
+    <Compile Include="Migrations\201806231258360_InitialCreate.cs" />
+    <Compile Include="Migrations\201806231258360_InitialCreate.Designer.cs">
+      <DependentUpon>201806231258360_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Verzekering.cs" />
+    <Compile Include="_GezondheidsZorg_DatabaseContextDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806231258360_InitialCreate.resx">
+      <DependentUpon>201806231258360_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,6 +103,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet.xsc">
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_GezondheidsZorg_DatabaseContextDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet.xss">
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

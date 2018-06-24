@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GezondheidsZorg
 {
-    class Klant
+    public class Klant
     {
         [Key]
         public int KlantID { get; set; }
@@ -17,5 +17,11 @@ namespace GezondheidsZorg
         public string Postcode { get; set; }
 
         public virtual List<Medicatie> Medicaties { get; set; }
+
+        public int ArtsID { get; set; }
+        public virtual Arts Arts { get; set; }
+
+        public int VerzekeringID { get; set; }
+        public virtual Verzekering Verzekering { get; set; }
     }
 }

@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace GezondheidsZorg
 {
-    class Verzekering
+    public class Verzekering
     {
         [Key]
         public int VerzekeringID { get; set; }
         public string VerzekeringNaam { get; set; }
+
+        public virtual List<Klant> Klanten { get; set; }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.box_Filter = new System.Windows.Forms.TextBox();
@@ -62,6 +63,8 @@
             this.artsAdres = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.artsComboBox = new System.Windows.Forms.ComboBox();
+            this.artsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._GezondheidsZorg_DatabaseContextDataSet = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
             this.Dropdown = new System.Windows.Forms.ComboBox();
@@ -69,7 +72,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.klntVerz = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.artsTableAdapter = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSetTableAdapters.ArtsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,8 +84,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(274, 131);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -115,11 +123,12 @@
             this.Btn_contract.TabIndex = 7;
             this.Btn_contract.Text = "Verleng Contract";
             this.Btn_contract.UseVisualStyleBackColor = true;
+            this.Btn_contract.Click += new System.EventHandler(this.Btn_contract_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(218, 271);
+            this.label5.Location = new System.Drawing.Point(253, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 12;
@@ -128,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(217, 298);
+            this.label6.Location = new System.Drawing.Point(215, 267);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 15;
@@ -137,7 +146,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(217, 327);
+            this.label7.Location = new System.Drawing.Point(226, 293);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 16;
@@ -147,7 +156,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(217, 355);
+            this.label8.Location = new System.Drawing.Point(217, 319);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 17;
@@ -155,21 +164,21 @@
             // 
             // klntvoornaam
             // 
-            this.klntvoornaam.Location = new System.Drawing.Point(292, 324);
+            this.klntvoornaam.Location = new System.Drawing.Point(290, 290);
             this.klntvoornaam.Name = "klntvoornaam";
             this.klntvoornaam.Size = new System.Drawing.Size(100, 20);
             this.klntvoornaam.TabIndex = 18;
             // 
             // klntachternaam
             // 
-            this.klntachternaam.Location = new System.Drawing.Point(292, 352);
+            this.klntachternaam.Location = new System.Drawing.Point(290, 316);
             this.klntachternaam.Name = "klntachternaam";
             this.klntachternaam.Size = new System.Drawing.Size(100, 20);
             this.klntachternaam.TabIndex = 19;
             // 
             // klntAdd
             // 
-            this.klntAdd.Location = new System.Drawing.Point(290, 387);
+            this.klntAdd.Location = new System.Drawing.Point(290, 400);
             this.klntAdd.Name = "klntAdd";
             this.klntAdd.Size = new System.Drawing.Size(102, 23);
             this.klntAdd.TabIndex = 20;
@@ -240,7 +249,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(293, 431);
+            this.label12.Location = new System.Drawing.Point(26, 473);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 13);
             this.label12.TabIndex = 29;
@@ -248,14 +257,14 @@
             // 
             // soortVerz
             // 
-            this.soortVerz.Location = new System.Drawing.Point(389, 429);
+            this.soortVerz.Location = new System.Drawing.Point(122, 470);
             this.soortVerz.Name = "soortVerz";
             this.soortVerz.Size = new System.Drawing.Size(127, 20);
             this.soortVerz.TabIndex = 30;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(389, 454);
+            this.button6.Location = new System.Drawing.Point(122, 496);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(127, 23);
             this.button6.TabIndex = 31;
@@ -274,7 +283,7 @@
             // 
             // soortMed
             // 
-            this.soortMed.Location = new System.Drawing.Point(389, 487);
+            this.soortMed.Location = new System.Drawing.Point(389, 470);
             this.soortMed.Name = "soortMed";
             this.soortMed.Size = new System.Drawing.Size(127, 20);
             this.soortMed.TabIndex = 33;
@@ -282,7 +291,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(302, 490);
+            this.label13.Location = new System.Drawing.Point(302, 473);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
             this.label13.TabIndex = 32;
@@ -291,7 +300,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(436, 271);
+            this.label14.Location = new System.Drawing.Point(244, 345);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(40, 13);
             this.label14.TabIndex = 35;
@@ -299,7 +308,7 @@
             // 
             // klntadres
             // 
-            this.klntadres.Location = new System.Drawing.Point(482, 268);
+            this.klntadres.Location = new System.Drawing.Point(290, 342);
             this.klntadres.Name = "klntadres";
             this.klntadres.Size = new System.Drawing.Size(100, 20);
             this.klntadres.TabIndex = 36;
@@ -307,7 +316,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(419, 301);
+            this.label15.Location = new System.Drawing.Point(226, 373);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 13);
             this.label15.TabIndex = 37;
@@ -315,7 +324,7 @@
             // 
             // klntpostcode
             // 
-            this.klntpostcode.Location = new System.Drawing.Point(482, 298);
+            this.klntpostcode.Location = new System.Drawing.Point(290, 368);
             this.klntpostcode.Name = "klntpostcode";
             this.klntpostcode.Size = new System.Drawing.Size(100, 20);
             this.klntpostcode.TabIndex = 38;
@@ -354,15 +363,27 @@
             // 
             // artsComboBox
             // 
-            this.artsComboBox.DisplayMember = "Test";
+            this.artsComboBox.DataSource = this.artsBindingSource;
+            this.artsComboBox.DisplayMember = "Achternaam";
             this.artsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.artsComboBox.FormattingEnabled = true;
-            this.artsComboBox.Location = new System.Drawing.Point(292, 269);
+            this.artsComboBox.Location = new System.Drawing.Point(290, 230);
             this.artsComboBox.Name = "artsComboBox";
             this.artsComboBox.Size = new System.Drawing.Size(121, 21);
             this.artsComboBox.TabIndex = 44;
             this.artsComboBox.Tag = "";
+            this.artsComboBox.ValueMember = "ArtsID";
             this.artsComboBox.SelectedIndexChanged += new System.EventHandler(this.artsComboBox_SelectedIndexChanged);
+            // 
+            // artsBindingSource
+            // 
+            this.artsBindingSource.DataMember = "Arts";
+            this.artsBindingSource.DataSource = this._GezondheidsZorg_DatabaseContextDataSet;
+            // 
+            // _GezondheidsZorg_DatabaseContextDataSet
+            // 
+            this._GezondheidsZorg_DatabaseContextDataSet.DataSetName = "_GezondheidsZorg_DatabaseContextDataSet";
+            this._GezondheidsZorg_DatabaseContextDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox3
             // 
@@ -414,7 +435,7 @@
             // 
             // klntVerz
             // 
-            this.klntVerz.Location = new System.Drawing.Point(292, 298);
+            this.klntVerz.Location = new System.Drawing.Point(290, 264);
             this.klntVerz.Name = "klntVerz";
             this.klntVerz.Size = new System.Drawing.Size(100, 20);
             this.klntVerz.TabIndex = 50;
@@ -426,6 +447,10 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(274, 131);
             this.dataGridView2.TabIndex = 51;
+            // 
+            // artsTableAdapter
+            // 
+            this.artsTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -477,6 +502,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -527,6 +554,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox klntVerz;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private _GezondheidsZorg_DatabaseContextDataSet _GezondheidsZorg_DatabaseContextDataSet;
+        private System.Windows.Forms.BindingSource artsBindingSource;
+        private _GezondheidsZorg_DatabaseContextDataSetTableAdapters.ArtsTableAdapter artsTableAdapter;
     }
 }
 

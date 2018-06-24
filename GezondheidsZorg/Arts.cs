@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GezondheidsZorg
 {
-    class Arts
+    public class Arts
     {
         [Key]
         public int ArtsID { get; set; }
@@ -16,6 +16,8 @@ namespace GezondheidsZorg
         public string Adres { get; set; }
         public string Postcode { get; set; }
         public DateTime Einddatum { get; set; }
+
+        public virtual List<Klant> Klanten { get; set; }
         
     }
 }

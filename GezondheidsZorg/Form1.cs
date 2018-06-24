@@ -22,6 +22,8 @@ namespace GezondheidsZorg
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_GezondheidsZorg_DatabaseContextDataSet.Arts' table. You can move, or remove it, as needed.
+            this.artsTableAdapter.Fill(this._GezondheidsZorg_DatabaseContextDataSet.Arts);
             using (var db = new DatabaseContext())
             {
 
@@ -66,14 +68,23 @@ namespace GezondheidsZorg
 
         private void klntAdd_Click(object sender, EventArgs e)
         {
+
+            string arts = artsComboBox.Text;
+            string verz = klntVerz.Text;
             string klantvoor = klntvoornaam.Text;
             string klantacht = klntachternaam.Text;
             string klantadres = klntadres.Text;
             string klantpostcode = klntpostcode.Text;
 
+            using(var db = new DatabaseContext())
+            {
+               
+            }
+            
+
 
             //datagridview2
-            
+
         }
 
         private void artsAdd_Click(object sender, EventArgs e)
@@ -143,18 +154,33 @@ namespace GezondheidsZorg
             using (var db = new DatabaseContext())
             {
                 artsComboBox.ValueMember = "ArtsID";
-                artsComboBox.DisplayMember = "Voornaam";
+                artsComboBox.DisplayMember = "Achternaam";
                 artsComboBox.DataSource = db.arts;
+                
             }
 
-            string arts = artsComboBox.SelectedValue.ToString();
+            
         }
         //Verwijder TODO
         private void verwijderRow_Click(object sender, EventArgs e)
         {
 
         }
-     }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void Btn_contract_Click(object sender, EventArgs e)
+        {
+            DateTime date = DateTime.Parse(dataGridView1.SelectedRows[0].Cells[5].Value.ToString());
+
+            DateTime newDate = date.AddYears(1);
+
+            
+        }
+    }
 }
     
 

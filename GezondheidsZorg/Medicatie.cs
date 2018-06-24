@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GezondheidsZorg
 {
-    class Medicatie
+    public class Medicatie
     {
         [Key]
         public int MedicatieID { get; set; }
