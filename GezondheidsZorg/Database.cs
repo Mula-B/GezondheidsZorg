@@ -9,9 +9,9 @@ namespace GezondheidsZorg
 {
     class DatabaseContext : DbContext
     {
-        public DbSet<Klant> klant { get; set; }
-        public DbSet<Arts> arts { get; set; }
-        public DbSet<Medicatie> medicatie { get; set; }
-        public DbSet<Verzekering> verzekering { get; set; }
+        public DbSet<Klant> klanten { get; set; }
+        public DbSet<Arts> artsen { get; set; }
+        public DbSet<Medicatie> medicaties { get; set; }
+        public DbSet<Verzekering> verzekeringen { get; set; }
     }
 }

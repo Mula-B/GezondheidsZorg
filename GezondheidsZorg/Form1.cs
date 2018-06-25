@@ -78,7 +78,9 @@ namespace GezondheidsZorg
 
             using(var db = new DatabaseContext())
             {
-               
+                
+
+
             }
             
 
@@ -89,11 +91,7 @@ namespace GezondheidsZorg
 
         private void artsAdd_Click(object sender, EventArgs e)
         {
-            if(artsvoornaam.Text + artsachternaam.Text + artsAdres.Text + artspostcode.Text + einddatum.Text == "")
-            {
-                MessageBox.Show("Geen arts gegevens opgegeven!");
-            }
-
+            
             string artsvoor = artsvoornaam.Text;
             string artsacht = artsachternaam.Text;
             string artsadres = artsAdres.Text;
@@ -104,10 +102,10 @@ namespace GezondheidsZorg
             using (var db = new DatabaseContext())
             {
                 var arts = new Arts { Voornaam = artsvoor, Achternaam = artsacht, Adres = artsadres, Postcode = artspost, Einddatum = artseinddatum  };
-                db.arts.Add(arts);
+                db.artsen.Add(arts);
                 db.SaveChanges();
 
-                var query = from b in db.arts
+                var query = from b in db.artsen
                             orderby b.ArtsID
                             select b;
 
@@ -129,7 +127,7 @@ namespace GezondheidsZorg
             {
                using (var db = new DatabaseContext())
                 {
-                    var query = from a in db.arts
+                    var query = from a in db.artsen
                                 orderby a.ArtsID
                                 select a;
 
@@ -140,7 +138,7 @@ namespace GezondheidsZorg
             {
                 using (var db = new DatabaseContext())
                 {
-                    var query = from k in db.klant
+                    var query = from k in db.klanten
                                 orderby k.KlantID
                                 select k;
 
@@ -155,7 +153,7 @@ namespace GezondheidsZorg
             {
                 artsComboBox.ValueMember = "ArtsID";
                 artsComboBox.DisplayMember = "Achternaam";
-                artsComboBox.DataSource = db.arts;
+                artsComboBox.DataSource = db.artsen;
                 
             }
 
@@ -167,16 +165,32 @@ namespace GezondheidsZorg
 
         }
 
+        DataTable table = new DataTable();
+        int indexrow;
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            indexrow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexrow];
+
         }
 
         private void Btn_contract_Click(object sender, EventArgs e)
         {
-            DateTime date = DateTime.Parse(dataGridView1.SelectedRows[0].Cells[5].Value.ToString());
 
-            DateTime newDate = date.AddYears(1);
+            using (var db = new DatabaseContext())
+            {
+
+
+                DateTime date = DateTime.Parse(dataGridView1.SelectedRows[0].Cells[5].Value.ToString());
+                DateTime newDate = date.AddYears(1);
+
+                DataGridViewRow newDataRow = dataGridView1.Rows[indexrow];
+                newDataRow.Cells[5].Value = newDate;
+
+                db.SaveChanges();
+
+            }
 
             
         }
