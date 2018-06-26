@@ -17,17 +17,19 @@ namespace GezondheidsZorg
         {
             InitializeComponent();
         }
-
-
-
+       
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_GezondheidsZorg_DatabaseContextDataSet2.Klants' table. You can move, or remove it, as needed.
+            this.klantsTableAdapter.Fill(this._GezondheidsZorg_DatabaseContextDataSet2.Klants);
+            // TODO: This line of code loads data into the '_GezondheidsZorg_DatabaseContextDataSet1.Arts' table. You can move, or remove it, as needed.
+            this.artsTableAdapter1.Fill(this._GezondheidsZorg_DatabaseContextDataSet1.Arts);
             // TODO: This line of code loads data into the '_GezondheidsZorg_DatabaseContextDataSet.Arts' table. You can move, or remove it, as needed.
             this.artsTableAdapter.Fill(this._GezondheidsZorg_DatabaseContextDataSet.Arts);
             using (var db = new DatabaseContext())
             {
-
-
+                
+                
                 
 
 
@@ -43,7 +45,29 @@ namespace GezondheidsZorg
 
         private void Btn_filter_Click(object sender, EventArgs e)
         {
+            using (var db = new DatabaseContext())
+            {
+                if(Dropdown.SelectedItem == "Arts")
+                {
+                    var query = from a in db.artsen
+                                where a.Achternaam.Contains(box_Filter.Text)
+                                select a;
 
+                    dataGridView1.DataSource = query.ToList();
+                }
+                else
+                {
+                    var query = from k in db.klanten
+                                where k.Achternaam.Contains(box_Filter.Text)
+                                select k;
+
+                    dataGridView2.DataSource = query.ToList();
+                }
+
+                
+
+
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -123,28 +147,7 @@ namespace GezondheidsZorg
 
         private void Dropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Dropdown.SelectedItem == "Arts")
-            {
-               using (var db = new DatabaseContext())
-                {
-                    var query = from a in db.artsen
-                                orderby a.ArtsID
-                                select a;
-
-                    dataGridView1.DataSource = query.ToList();
-                }
-            }
-            else
-            {
-                using (var db = new DatabaseContext())
-                {
-                    var query = from k in db.klanten
-                                orderby k.KlantID
-                                select k;
-
-                    dataGridView1.DataSource = query.ToList();
-                }
-            }
+            
         }
 
         private void artsComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,7 +191,11 @@ namespace GezondheidsZorg
                 DataGridViewRow newDataRow = dataGridView1.Rows[indexrow];
                 newDataRow.Cells[5].Value = newDate;
 
-                db.SaveChanges();
+                
+
+              
+
+               
 
             }
 

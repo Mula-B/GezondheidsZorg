@@ -77,6 +77,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_GezondheidsZorg_DatabaseContextDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_GezondheidsZorg_DatabaseContextDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +120,28 @@
     </None>
     <None Include="_GezondheidsZorg_DatabaseContextDataSet.xss">
       <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet1.xsc">
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_GezondheidsZorg_DatabaseContextDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet1.xss">
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet2.xsc">
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_GezondheidsZorg_DatabaseContextDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_GezondheidsZorg_DatabaseContextDataSet2.xss">
+      <DependentUpon>_GezondheidsZorg_DatabaseContextDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
