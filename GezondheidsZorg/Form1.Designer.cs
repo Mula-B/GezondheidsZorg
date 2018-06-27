@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.artsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.voornaamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.achternaamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.einddatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this._GezondheidsZorg_DatabaseContextDataSet1 = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet1();
             this.label1 = new System.Windows.Forms.Label();
             this.box_Filter = new System.Windows.Forms.TextBox();
             this.verwijderRow = new System.Windows.Forms.Button();
@@ -72,19 +80,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.klntVerz = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.artsTableAdapter = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSetTableAdapters.ArtsTableAdapter();
-            this._GezondheidsZorg_DatabaseContextDataSet1 = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet1();
-            this.artsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.artsTableAdapter1 = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet1TableAdapters.ArtsTableAdapter();
-            this.artsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.voornaamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.achternaamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.einddatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._GezondheidsZorg_DatabaseContextDataSet2 = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet2();
-            this.klantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.klantsTableAdapter = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet2TableAdapters.KlantsTableAdapter();
             this.klantIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.voornaamDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.achternaamDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,14 +87,19 @@
             this.postcodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artsIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.verzekeringIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.klantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._GezondheidsZorg_DatabaseContextDataSet2 = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet2();
+            this.artsTableAdapter = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSetTableAdapters.ArtsTableAdapter();
+            this.artsTableAdapter1 = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet1TableAdapters.ArtsTableAdapter();
+            this.klantsTableAdapter = new GezondheidsZorg._GezondheidsZorg_DatabaseContextDataSet2TableAdapters.KlantsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klantsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -120,6 +120,54 @@
             this.dataGridView1.Size = new System.Drawing.Size(274, 131);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CellMouseUp);
+            // 
+            // artsIDDataGridViewTextBoxColumn
+            // 
+            this.artsIDDataGridViewTextBoxColumn.DataPropertyName = "ArtsID";
+            this.artsIDDataGridViewTextBoxColumn.HeaderText = "ArtsID";
+            this.artsIDDataGridViewTextBoxColumn.Name = "artsIDDataGridViewTextBoxColumn";
+            this.artsIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // voornaamDataGridViewTextBoxColumn
+            // 
+            this.voornaamDataGridViewTextBoxColumn.DataPropertyName = "Voornaam";
+            this.voornaamDataGridViewTextBoxColumn.HeaderText = "Voornaam";
+            this.voornaamDataGridViewTextBoxColumn.Name = "voornaamDataGridViewTextBoxColumn";
+            // 
+            // achternaamDataGridViewTextBoxColumn
+            // 
+            this.achternaamDataGridViewTextBoxColumn.DataPropertyName = "Achternaam";
+            this.achternaamDataGridViewTextBoxColumn.HeaderText = "Achternaam";
+            this.achternaamDataGridViewTextBoxColumn.Name = "achternaamDataGridViewTextBoxColumn";
+            // 
+            // adresDataGridViewTextBoxColumn
+            // 
+            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
+            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
+            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
+            // 
+            // postcodeDataGridViewTextBoxColumn
+            // 
+            this.postcodeDataGridViewTextBoxColumn.DataPropertyName = "Postcode";
+            this.postcodeDataGridViewTextBoxColumn.HeaderText = "Postcode";
+            this.postcodeDataGridViewTextBoxColumn.Name = "postcodeDataGridViewTextBoxColumn";
+            // 
+            // einddatumDataGridViewTextBoxColumn
+            // 
+            this.einddatumDataGridViewTextBoxColumn.DataPropertyName = "Einddatum";
+            this.einddatumDataGridViewTextBoxColumn.HeaderText = "Einddatum";
+            this.einddatumDataGridViewTextBoxColumn.Name = "einddatumDataGridViewTextBoxColumn";
+            // 
+            // artsBindingSource1
+            // 
+            this.artsBindingSource1.DataMember = "Arts";
+            this.artsBindingSource1.DataSource = this._GezondheidsZorg_DatabaseContextDataSet1;
+            // 
+            // _GezondheidsZorg_DatabaseContextDataSet1
+            // 
+            this._GezondheidsZorg_DatabaseContextDataSet1.DataSetName = "_GezondheidsZorg_DatabaseContextDataSet1";
+            this._GezondheidsZorg_DatabaseContextDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -490,75 +538,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(274, 131);
             this.dataGridView2.TabIndex = 51;
             // 
-            // artsTableAdapter
-            // 
-            this.artsTableAdapter.ClearBeforeFill = true;
-            // 
-            // _GezondheidsZorg_DatabaseContextDataSet1
-            // 
-            this._GezondheidsZorg_DatabaseContextDataSet1.DataSetName = "_GezondheidsZorg_DatabaseContextDataSet1";
-            this._GezondheidsZorg_DatabaseContextDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // artsBindingSource1
-            // 
-            this.artsBindingSource1.DataMember = "Arts";
-            this.artsBindingSource1.DataSource = this._GezondheidsZorg_DatabaseContextDataSet1;
-            // 
-            // artsTableAdapter1
-            // 
-            this.artsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // artsIDDataGridViewTextBoxColumn
-            // 
-            this.artsIDDataGridViewTextBoxColumn.DataPropertyName = "ArtsID";
-            this.artsIDDataGridViewTextBoxColumn.HeaderText = "ArtsID";
-            this.artsIDDataGridViewTextBoxColumn.Name = "artsIDDataGridViewTextBoxColumn";
-            this.artsIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // voornaamDataGridViewTextBoxColumn
-            // 
-            this.voornaamDataGridViewTextBoxColumn.DataPropertyName = "Voornaam";
-            this.voornaamDataGridViewTextBoxColumn.HeaderText = "Voornaam";
-            this.voornaamDataGridViewTextBoxColumn.Name = "voornaamDataGridViewTextBoxColumn";
-            // 
-            // achternaamDataGridViewTextBoxColumn
-            // 
-            this.achternaamDataGridViewTextBoxColumn.DataPropertyName = "Achternaam";
-            this.achternaamDataGridViewTextBoxColumn.HeaderText = "Achternaam";
-            this.achternaamDataGridViewTextBoxColumn.Name = "achternaamDataGridViewTextBoxColumn";
-            // 
-            // adresDataGridViewTextBoxColumn
-            // 
-            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
-            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
-            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
-            // 
-            // postcodeDataGridViewTextBoxColumn
-            // 
-            this.postcodeDataGridViewTextBoxColumn.DataPropertyName = "Postcode";
-            this.postcodeDataGridViewTextBoxColumn.HeaderText = "Postcode";
-            this.postcodeDataGridViewTextBoxColumn.Name = "postcodeDataGridViewTextBoxColumn";
-            // 
-            // einddatumDataGridViewTextBoxColumn
-            // 
-            this.einddatumDataGridViewTextBoxColumn.DataPropertyName = "Einddatum";
-            this.einddatumDataGridViewTextBoxColumn.HeaderText = "Einddatum";
-            this.einddatumDataGridViewTextBoxColumn.Name = "einddatumDataGridViewTextBoxColumn";
-            // 
-            // _GezondheidsZorg_DatabaseContextDataSet2
-            // 
-            this._GezondheidsZorg_DatabaseContextDataSet2.DataSetName = "_GezondheidsZorg_DatabaseContextDataSet2";
-            this._GezondheidsZorg_DatabaseContextDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // klantsBindingSource
-            // 
-            this.klantsBindingSource.DataMember = "Klants";
-            this.klantsBindingSource.DataSource = this._GezondheidsZorg_DatabaseContextDataSet2;
-            // 
-            // klantsTableAdapter
-            // 
-            this.klantsTableAdapter.ClearBeforeFill = true;
-            // 
             // klantIDDataGridViewTextBoxColumn
             // 
             this.klantIDDataGridViewTextBoxColumn.DataPropertyName = "KlantID";
@@ -601,6 +580,28 @@
             this.verzekeringIDDataGridViewTextBoxColumn.DataPropertyName = "VerzekeringID";
             this.verzekeringIDDataGridViewTextBoxColumn.HeaderText = "VerzekeringID";
             this.verzekeringIDDataGridViewTextBoxColumn.Name = "verzekeringIDDataGridViewTextBoxColumn";
+            // 
+            // klantsBindingSource
+            // 
+            this.klantsBindingSource.DataMember = "Klants";
+            this.klantsBindingSource.DataSource = this._GezondheidsZorg_DatabaseContextDataSet2;
+            // 
+            // _GezondheidsZorg_DatabaseContextDataSet2
+            // 
+            this._GezondheidsZorg_DatabaseContextDataSet2.DataSetName = "_GezondheidsZorg_DatabaseContextDataSet2";
+            this._GezondheidsZorg_DatabaseContextDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // artsTableAdapter
+            // 
+            this.artsTableAdapter.ClearBeforeFill = true;
+            // 
+            // artsTableAdapter1
+            // 
+            this.artsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // klantsTableAdapter
+            // 
+            this.klantsTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -652,13 +653,13 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klantsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._GezondheidsZorg_DatabaseContextDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
