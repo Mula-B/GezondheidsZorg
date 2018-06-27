@@ -102,15 +102,31 @@ namespace GezondheidsZorg
 
             using(var db = new DatabaseContext())
             {
+                Klant k = new Klant();
+
+                k.Voornaam = klantvoor;
+                k.Achternaam = klantacht;
+                k.Adres = klantadres;
+                k.Postcode = klantpostcode;
+
+                db.klanten.Add(k);
+                db.SaveChanges();
+
+                var query = from a in db.klanten
+                            orderby a.KlantID
+                            select a;
+
+                dataGridView2.DataSource = query.ToList();
+
+                klntVerz.Text = string.Empty;
+                klntvoornaam.Text = string.Empty;
+                klntachternaam.Text = string.Empty;
+                klntadres.Text = string.Empty;
+                klntpostcode.Text = string.Empty;
                 
 
-
             }
-            
-
-
-            //datagridview2
-
+        
         }
 
         private void artsAdd_Click(object sender, EventArgs e)
@@ -183,20 +199,12 @@ namespace GezondheidsZorg
 
             using (var db = new DatabaseContext())
             {
-
-
                 DateTime date = DateTime.Parse(dataGridView1.SelectedRows[0].Cells[5].Value.ToString());
                 DateTime newDate = date.AddYears(1);
 
                 DataGridViewRow newDataRow = dataGridView1.Rows[indexrow];
                 newDataRow.Cells[5].Value = newDate;
-
-                
-
-              
-
-               
-
+        
             }
 
             
