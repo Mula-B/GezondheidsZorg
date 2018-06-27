@@ -181,7 +181,11 @@ namespace GezondheidsZorg
         //Verwijder TODO
         private void verwijderRow_Click(object sender, EventArgs e)
         {
-
+            if(this.dataGridView1.SelectedRows.Count > 0)
+            {
+                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+                
+            }
         }
 
         DataTable table = new DataTable();
@@ -192,7 +196,10 @@ namespace GezondheidsZorg
             indexrow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexrow];
 
+            
+
         }
+                
 
         private void Btn_contract_Click(object sender, EventArgs e)
         {
@@ -207,6 +214,12 @@ namespace GezondheidsZorg
         
             }
 
+            
+        }
+
+        private void CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           
             
         }
     }
