@@ -13,6 +13,8 @@ namespace GezondheidsZorg
 {
     public partial class Form1 : Form
     {
+        DatabaseContext db = new DatabaseContext();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,28 +22,13 @@ namespace GezondheidsZorg
        
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_GezondheidsZorg_DatabaseContextDataSet2.Klants' table. You can move, or remove it, as needed.
-            this.klantsTableAdapter.Fill(this._GezondheidsZorg_DatabaseContextDataSet2.Klants);
-            // TODO: This line of code loads data into the '_GezondheidsZorg_DatabaseContextDataSet1.Arts' table. You can move, or remove it, as needed.
-            this.artsTableAdapter1.Fill(this._GezondheidsZorg_DatabaseContextDataSet1.Arts);
-            // TODO: This line of code loads data into the '_GezondheidsZorg_DatabaseContextDataSet.Arts' table. You can move, or remove it, as needed.
-            this.artsTableAdapter.Fill(this._GezondheidsZorg_DatabaseContextDataSet.Arts);
-            using (var db = new DatabaseContext())
-            {
-                
-                
-                
+            dataGridView1.DataSource = db.artsen.ToList();
 
-
-
-
-
-            }
+            artsComboBox.ValueMember = "ArtsID";
+            artsComboBox.DisplayMember = "Achternaam";
+            artsComboBox.DataSource = db.artsen.ToList();
         }
-
-
-
-
+        
 
         private void Btn_filter_Click(object sender, EventArgs e)
         {
@@ -139,8 +126,7 @@ namespace GezondheidsZorg
             string artseind = einddatum.Text;
             DateTime artseinddatum = DateTime.Parse(artseind);
 
-            using (var db = new DatabaseContext())
-            {
+            
                 var arts = new Arts { Voornaam = artsvoor, Achternaam = artsacht, Adres = artsadres, Postcode = artspost, Einddatum = artseinddatum  };
                 db.artsen.Add(arts);
                 db.SaveChanges();
@@ -157,7 +143,6 @@ namespace GezondheidsZorg
                 artspostcode.Text = string.Empty;
                 einddatum.Text = string.Empty;
 
-            }
 
         }
 
@@ -168,24 +153,23 @@ namespace GezondheidsZorg
 
         private void artsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (var db = new DatabaseContext())
-            {
-                artsComboBox.ValueMember = "ArtsID";
-                artsComboBox.DisplayMember = "Achternaam";
-                artsComboBox.DataSource = db.artsen;
+            
+
                 
-            }
 
             
         }
         //Verwijder TODO
         private void verwijderRow_Click(object sender, EventArgs e)
         {
-            if(this.dataGridView1.SelectedRows.Count > 0)
+            foreach (DataGridViewRow r in dataGridView1.SelectedRows)
             {
-                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
-                
+                Arts a = (Arts)r.DataBoundItem;
+                db.artsen.Remove(a);
             }
+            db.SaveChanges();
+            dataGridView1.DataSource = db.artsen.ToList();
+
         }
 
         DataTable table = new DataTable();
@@ -193,8 +177,6 @@ namespace GezondheidsZorg
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexrow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexrow];
 
             
 
