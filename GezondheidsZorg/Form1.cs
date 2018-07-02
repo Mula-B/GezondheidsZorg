@@ -170,6 +170,14 @@ namespace GezondheidsZorg
             db.SaveChanges();
             dataGridView1.DataSource = db.artsen.ToList();
 
+            foreach (DataGridViewRow r in dataGridView2.SelectedRows)
+            {
+                Klant k = (Klant)r.DataBoundItem;
+                db.klanten.Remove(k);
+            }
+            db.SaveChanges();
+            dataGridView2.DataSource = db.klanten.ToList();
+
         }
 
         DataTable table = new DataTable();
@@ -188,6 +196,7 @@ namespace GezondheidsZorg
 
             using (var db = new DatabaseContext())
             {
+                
                 DateTime date = DateTime.Parse(dataGridView1.SelectedRows[0].Cells[5].Value.ToString());
                 DateTime newDate = date.AddYears(1);
 
