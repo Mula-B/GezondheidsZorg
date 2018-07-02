@@ -27,13 +27,14 @@ namespace GezondheidsZorg
             artsComboBox.ValueMember = "ArtsID";
             artsComboBox.DisplayMember = "Achternaam";
             artsComboBox.DataSource = db.artsen.ToList();
+
+            dataGridView2.DataSource = db.klanten.ToList();
+            dataGridView3.DataSource = db.medicaties.ToList();
         }
         
 
         private void Btn_filter_Click(object sender, EventArgs e)
-        {
-            using (var db = new DatabaseContext())
-            {
+        {           
                 if(Dropdown.SelectedItem == "Arts")
                 {
                     var query = from a in db.artsen
@@ -50,11 +51,7 @@ namespace GezondheidsZorg
 
                     dataGridView2.DataSource = query.ToList();
                 }
-
-                
-
-
-            }
+                        
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -87,14 +84,15 @@ namespace GezondheidsZorg
             string klantadres = klntadres.Text;
             string klantpostcode = klntpostcode.Text;
 
-            using(var db = new DatabaseContext())
-            {
-                Klant k = new Klant();
-
+            
+                Klant k = new Klant();                
                 k.Voornaam = klantvoor;
                 k.Achternaam = klantacht;
                 k.Adres = klantadres;
                 k.Postcode = klantpostcode;
+
+                Medicatie m = new Medicatie();
+                
 
                 db.klanten.Add(k);
                 db.SaveChanges();
@@ -110,10 +108,7 @@ namespace GezondheidsZorg
                 klntachternaam.Text = string.Empty;
                 klntadres.Text = string.Empty;
                 klntpostcode.Text = string.Empty;
-                
-
-            }
-        
+                  
         }
 
         private void artsAdd_Click(object sender, EventArgs e)
@@ -159,7 +154,7 @@ namespace GezondheidsZorg
 
             
         }
-        //Verwijder TODO
+        
         private void verwijderRow_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow r in dataGridView1.SelectedRows)
@@ -169,40 +164,49 @@ namespace GezondheidsZorg
             }
             db.SaveChanges();
             dataGridView1.DataSource = db.artsen.ToList();
+            
 
         }
-
-        DataTable table = new DataTable();
-        int indexrow;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            
-
         }
                 
-
         private void Btn_contract_Click(object sender, EventArgs e)
         {
-
-            using (var db = new DatabaseContext())
+            if (dataGridView1.SelectedRows.Count == 1)
             {
-                DateTime date = DateTime.Parse(dataGridView1.SelectedRows[0].Cells[5].Value.ToString());
-                DateTime newDate = date.AddYears(1);
+                DataGridViewRow r = dataGridView1.SelectedRows[0];
+                Arts a = (Arts)r.DataBoundItem;
+                DateTime date = a.Einddatum.AddYears(1);
 
-                DataGridViewRow newDataRow = dataGridView1.Rows[indexrow];
-                newDataRow.Cells[5].Value = newDate;
-        
+                a.Einddatum = date;
+
+                db.SaveChanges();
+                dataGridView1.DataSource = db.artsen.ToList();
+
             }
+           
 
-            
+
+
         }
 
         private void CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
            
             
+        }
+
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            
+                        
+                        
+                        
+            
+
+
         }
     }
 }
