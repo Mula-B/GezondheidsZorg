@@ -15,10 +15,10 @@ namespace GezondheidsZorg
         public string Achternaam { get; set; }
         public string Adres { get; set; }
         public string Postcode { get; set; }
-        public int ArtsID { get; set; }
-        public List<Arts> Arts { get; set; }
+
         public virtual List<Medicatie> Medicaties { get; set; }
 
 
     }
 }
+

@@ -12,7 +12,8 @@ namespace GezondheidsZorg
         [Key]
         public int VerzekeringID { get; set; }
         public string VerzekeringNaam { get; set; }
-        public List<Klant> Klanten { get; set; }
+
+        public virtual ICollection<Klant> Klanten { get; set; }
 
      
     }

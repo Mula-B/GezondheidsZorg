@@ -45,12 +45,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.artsachternaam = new System.Windows.Forms.TextBox();
             this.artsAdd = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.soortVerz = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.soortMed = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,7 +56,6 @@
             this.artsAdres = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.artsComboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Btn_filter = new System.Windows.Forms.Button();
             this.Dropdown = new System.Windows.Forms.ComboBox();
             this.einddatum = new System.Windows.Forms.TextBox();
@@ -134,7 +127,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(215, 267);
+            this.label6.Location = new System.Drawing.Point(215, 393);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 15;
@@ -143,7 +136,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(226, 293);
+            this.label7.Location = new System.Drawing.Point(226, 263);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 16;
@@ -153,7 +146,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(217, 319);
+            this.label8.Location = new System.Drawing.Point(217, 289);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 17;
@@ -161,21 +154,21 @@
             // 
             // klntvoornaam
             // 
-            this.klntvoornaam.Location = new System.Drawing.Point(290, 290);
+            this.klntvoornaam.Location = new System.Drawing.Point(290, 260);
             this.klntvoornaam.Name = "klntvoornaam";
             this.klntvoornaam.Size = new System.Drawing.Size(100, 20);
             this.klntvoornaam.TabIndex = 18;
             // 
             // klntachternaam
             // 
-            this.klntachternaam.Location = new System.Drawing.Point(290, 316);
+            this.klntachternaam.Location = new System.Drawing.Point(290, 286);
             this.klntachternaam.Name = "klntachternaam";
             this.klntachternaam.Size = new System.Drawing.Size(100, 20);
             this.klntachternaam.TabIndex = 19;
             // 
             // klntAdd
             // 
-            this.klntAdd.Location = new System.Drawing.Point(290, 400);
+            this.klntAdd.Location = new System.Drawing.Point(290, 426);
             this.klntAdd.Name = "klntAdd";
             this.klntAdd.Size = new System.Drawing.Size(102, 23);
             this.klntAdd.TabIndex = 20;
@@ -225,70 +218,17 @@
             this.artsAdd.UseVisualStyleBackColor = true;
             this.artsAdd.Click += new System.EventHandler(this.artsAdd_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(330, 544);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 13);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Medicatie";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(389, 568);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(127, 23);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Medicatie toewijzen";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 473);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 13);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Soort verzekering";
-            // 
-            // soortVerz
-            // 
-            this.soortVerz.Location = new System.Drawing.Point(122, 470);
-            this.soortVerz.Name = "soortVerz";
-            this.soortVerz.Size = new System.Drawing.Size(127, 20);
-            this.soortVerz.TabIndex = 30;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(122, 496);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(127, 23);
-            this.button6.TabIndex = 31;
-            this.button6.Text = "Verzekering toevoegen";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(389, 513);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(127, 23);
-            this.button7.TabIndex = 34;
-            this.button7.Text = "Medicatie toevoegen";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // soortMed
             // 
-            this.soortMed.Location = new System.Drawing.Point(389, 470);
+            this.soortMed.Location = new System.Drawing.Point(290, 364);
             this.soortMed.Name = "soortMed";
-            this.soortMed.Size = new System.Drawing.Size(127, 20);
+            this.soortMed.Size = new System.Drawing.Size(100, 20);
             this.soortMed.TabIndex = 33;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(302, 473);
+            this.label13.Location = new System.Drawing.Point(203, 367);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
             this.label13.TabIndex = 32;
@@ -297,7 +237,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(244, 345);
+            this.label14.Location = new System.Drawing.Point(244, 315);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(40, 13);
             this.label14.TabIndex = 35;
@@ -305,7 +245,7 @@
             // 
             // klntadres
             // 
-            this.klntadres.Location = new System.Drawing.Point(290, 342);
+            this.klntadres.Location = new System.Drawing.Point(290, 312);
             this.klntadres.Name = "klntadres";
             this.klntadres.Size = new System.Drawing.Size(100, 20);
             this.klntadres.TabIndex = 36;
@@ -313,7 +253,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(226, 373);
+            this.label15.Location = new System.Drawing.Point(226, 343);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 13);
             this.label15.TabIndex = 37;
@@ -321,7 +261,7 @@
             // 
             // klntpostcode
             // 
-            this.klntpostcode.Location = new System.Drawing.Point(290, 368);
+            this.klntpostcode.Location = new System.Drawing.Point(290, 338);
             this.klntpostcode.Name = "klntpostcode";
             this.klntpostcode.Size = new System.Drawing.Size(100, 20);
             this.klntpostcode.TabIndex = 38;
@@ -371,15 +311,6 @@
             this.artsComboBox.ValueMember = "ArtsID";
             this.artsComboBox.SelectedIndexChanged += new System.EventHandler(this.artsComboBox_SelectedIndexChanged);
             // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(389, 541);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(127, 21);
-            this.comboBox3.TabIndex = 46;
-            // 
             // Btn_filter
             // 
             this.Btn_filter.Location = new System.Drawing.Point(335, 147);
@@ -421,7 +352,7 @@
             // 
             // klntVerz
             // 
-            this.klntVerz.Location = new System.Drawing.Point(290, 264);
+            this.klntVerz.Location = new System.Drawing.Point(290, 390);
             this.klntVerz.Name = "klntVerz";
             this.klntVerz.Size = new System.Drawing.Size(100, 20);
             this.klntVerz.TabIndex = 50;
@@ -454,7 +385,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.einddatum);
             this.Controls.Add(this.Btn_filter);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.artsComboBox);
             this.Controls.Add(this.Dropdown);
             this.Controls.Add(this.artspostcode);
@@ -465,14 +395,8 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.klntadres);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.soortMed);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.soortVerz);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.artsAdd);
             this.Controls.Add(this.artsachternaam);
             this.Controls.Add(this.label10);
@@ -521,12 +445,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox artsachternaam;
         private System.Windows.Forms.Button artsAdd;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox soortVerz;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox soortMed;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -538,7 +456,6 @@
         private System.Windows.Forms.TextBox artsAdres;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox artsComboBox;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button Btn_filter;
         private System.Windows.Forms.ComboBox Dropdown;
         private System.Windows.Forms.TextBox einddatum;

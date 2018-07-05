@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 
+
 namespace GezondheidsZorg
 {
     public partial class Form1 : Form
@@ -29,7 +30,7 @@ namespace GezondheidsZorg
             artsComboBox.DataSource = db.artsen.ToList();
 
             dataGridView2.DataSource = db.klanten.ToList();
-            dataGridView3.DataSource = db.medicaties.ToList();
+
         }
         
 
@@ -84,16 +85,21 @@ namespace GezondheidsZorg
             string klantadres = klntadres.Text;
             string klantpostcode = klntpostcode.Text;
 
-            
+                Arts c = (Arts)artsComboBox.SelectedItem;
+
                 Klant k = new Klant();                
                 k.Voornaam = klantvoor;
                 k.Achternaam = klantacht;
                 k.Adres = klantadres;
                 k.Postcode = klantpostcode;
 
+                Arts x = c;
+                x.Klanten.Add(k);
+                 
                 Medicatie m = new Medicatie();
+                m.MedicatieNaam = soortMed.Text;
                 
-
+                db.medicaties.Add(m);
                 db.klanten.Add(k);
                 db.SaveChanges();
 
@@ -201,7 +207,6 @@ namespace GezondheidsZorg
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
             
-                        
                         
                         
             
