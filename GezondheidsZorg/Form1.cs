@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
-
+using System.Drawing.Printing;
 
 namespace GezondheidsZorg
 {
@@ -209,6 +209,37 @@ namespace GezondheidsZorg
 
         }
 
+
+        public List<string> gegevens = new List<string>();
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                gegevens.Add("Voornaam: " + row.Cells[1].ToString() + " " + row.Cells[2].ToString() + ", Adres: " + row.Cells[3].ToString() + ", Postcode: " + row.Cells[4].ToString());
+
+            }
+            PrintDocument print = new PrintDocument();
+            print.PrintPage += new PrintPageEventHandler(PrintImage);
+            print.Print();
+            gegevens.Clear();
+        }
+
+        public void PrintImage(object ob, PrintPageEventArgs e)
+        {
+            float x = 6f;
+            float y = 6f;
+            Font font = new Font("Arial", 10);
+            SolidBrush color = new SolidBrush(Color.Black);
+            PointF point = new PointF(x, y);
+
+            foreach(string ding in gegevens)
+            {
+                e.Graphics.DrawString(ding, font, color, point);
+                y += 16f;
+                point = new PointF(x, y);
+            }
+        }
     }
 }
     
