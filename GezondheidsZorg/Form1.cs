@@ -31,6 +31,8 @@ namespace GezondheidsZorg
 
             dataGridView2.DataSource = db.klanten.ToList();
 
+            dataGridView3.DataSource = db.medicaties.ToList();
+
         }
         
 
@@ -92,7 +94,7 @@ namespace GezondheidsZorg
                 k.Achternaam = klantacht;
                 k.Adres = klantadres;
                 k.Postcode = klantpostcode;
-
+                
                 Arts x = c;
                 x.Klanten.Add(k);
                  
@@ -143,22 +145,7 @@ namespace GezondheidsZorg
                 artsAdres.Text = string.Empty;
                 artspostcode.Text = string.Empty;
                 einddatum.Text = string.Empty;
-
-
-        }
-
-        private void Dropdown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void artsComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
-                
-
-            
+                soortMed.Text = string.Empty;
         }
         
         private void verwijderRow_Click(object sender, EventArgs e)
@@ -170,12 +157,6 @@ namespace GezondheidsZorg
             }
             db.SaveChanges();
             dataGridView1.DataSource = db.artsen.ToList();
-            
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
                 
         private void Btn_contract_Click(object sender, EventArgs e)
@@ -193,26 +174,41 @@ namespace GezondheidsZorg
 
             }
            
-
-
-
         }
 
-        private void CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-           
-            
+            if (dataGridView1.SelectedRows.Count == 1) {
+
+                DataGridViewRow r = dataGridView1.SelectedRows[0];
+                Arts a = (Arts)r.DataBoundItem;
+
+                var query = db.klanten.Where(k => k.ArtsId == a.ArtsID);
+
+                dataGridView2.DataSource = query.ToList();
+            }
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
-            
-                        
-                        
-            
+           if(dataGridView2.SelectedRows.Count == 1) {
 
+                DataGridViewRow r = dataGridView2.SelectedRows[0];
+                Klant a = (Klant)r.DataBoundItem;
+
+                var query = db.medicaties.Where(k => k.KlantID == a.KlantID);
+
+                dataGridView3.DataSource = query.ToList();
+
+            }
+            else
+            {
+                dataGridView3.DataSource = null;
+            }
+           
 
         }
+
     }
 }
     

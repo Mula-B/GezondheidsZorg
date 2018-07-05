@@ -13,7 +13,7 @@ namespace GezondheidsZorg
         public int MedicatieID { get; set; }
         public string MedicatieNaam { get; set; }
 
+        public Klant Klant { get; set; }
         public int KlantID { get; set; }
-        public virtual Klant Klant { get; set; }
     }
 }

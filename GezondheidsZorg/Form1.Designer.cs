@@ -76,8 +76,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(274, 131);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CellMouseUp);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // label1
             // 
@@ -228,11 +227,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(203, 367);
+            this.label13.Location = new System.Drawing.Point(231, 367);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.Size = new System.Drawing.Size(53, 13);
             this.label13.TabIndex = 32;
-            this.label13.Text = "Soort Medicatie";
+            this.label13.Text = "Medicatie";
             // 
             // label14
             // 
@@ -253,7 +252,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(226, 343);
+            this.label15.Location = new System.Drawing.Point(226, 341);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 13);
             this.label15.TabIndex = 37;
@@ -309,7 +308,6 @@
             this.artsComboBox.TabIndex = 44;
             this.artsComboBox.Tag = "";
             this.artsComboBox.ValueMember = "ArtsID";
-            this.artsComboBox.SelectedIndexChanged += new System.EventHandler(this.artsComboBox_SelectedIndexChanged);
             // 
             // Btn_filter
             // 
@@ -332,7 +330,6 @@
             this.Dropdown.Name = "Dropdown";
             this.Dropdown.Size = new System.Drawing.Size(121, 21);
             this.Dropdown.TabIndex = 43;
-            this.Dropdown.SelectedIndexChanged += new System.EventHandler(this.Dropdown_SelectedIndexChanged);
             // 
             // einddatum
             // 

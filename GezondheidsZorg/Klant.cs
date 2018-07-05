@@ -16,6 +16,9 @@ namespace GezondheidsZorg
         public string Adres { get; set; }
         public string Postcode { get; set; }
 
+        public Arts Arts { get; set; }
+        public int ArtsId { get; set; }
+
         public virtual List<Medicatie> Medicaties { get; set; }
 
 
