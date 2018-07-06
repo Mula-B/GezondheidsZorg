@@ -97,7 +97,7 @@
             // 
             // verwijderRow
             // 
-            this.verwijderRow.Location = new System.Drawing.Point(209, 174);
+            this.verwijderRow.Location = new System.Drawing.Point(12, 174);
             this.verwijderRow.Name = "verwijderRow";
             this.verwijderRow.Size = new System.Drawing.Size(75, 23);
             this.verwijderRow.TabIndex = 6;

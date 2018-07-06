@@ -214,10 +214,10 @@ namespace GezondheidsZorg
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView2.Rows)
-            {
-                gegevens.Add("Voornaam: " + row.Cells[1].ToString() + " " + row.Cells[2].ToString() + ", Adres: " + row.Cells[3].ToString() + ", Postcode: " + row.Cells[4].ToString());
 
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            {
+                gegevens.Add("Voornaam: " + row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString() + ", Adres: " + row.Cells[3].Value.ToString() + ", Postcode: " + row.Cells[4].Value.ToString());
             }
             PrintDocument print = new PrintDocument();
             print.PrintPage += new PrintPageEventHandler(PrintImage);
@@ -233,9 +233,9 @@ namespace GezondheidsZorg
             SolidBrush color = new SolidBrush(Color.Black);
             PointF point = new PointF(x, y);
 
-            foreach(string ding in gegevens)
+            foreach(string item in gegevens)
             {
-                e.Graphics.DrawString(ding, font, color, point);
+                e.Graphics.DrawString(item, font, color, point);
                 y += 16f;
                 point = new PointF(x, y);
             }
