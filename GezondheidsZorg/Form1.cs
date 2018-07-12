@@ -57,26 +57,7 @@ namespace GezondheidsZorg
                         
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void klntAdd_Click(object sender, EventArgs e)
         {
 
@@ -116,8 +97,10 @@ namespace GezondheidsZorg
                 klntachternaam.Text = string.Empty;
                 klntadres.Text = string.Empty;
                 klntpostcode.Text = string.Empty;
+                soortMed.Text = string.Empty;
                   
         }
+
 
         private void artsAdd_Click(object sender, EventArgs e)
         {
@@ -147,6 +130,7 @@ namespace GezondheidsZorg
                 einddatum.Text = string.Empty;
                 soortMed.Text = string.Empty;
         }
+
         
         private void verwijderRow_Click(object sender, EventArgs e)
         {
@@ -158,6 +142,7 @@ namespace GezondheidsZorg
             db.SaveChanges();
             dataGridView1.DataSource = db.artsen.ToList();
         }
+
                 
         private void Btn_contract_Click(object sender, EventArgs e)
         {
@@ -176,6 +161,7 @@ namespace GezondheidsZorg
            
         }
 
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1) {
@@ -188,6 +174,7 @@ namespace GezondheidsZorg
                 dataGridView2.DataSource = query.ToList();
             }
         }
+
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
@@ -217,13 +204,14 @@ namespace GezondheidsZorg
 
             foreach (DataGridViewRow row in dataGridView2.SelectedRows)
             {
-                gegevens.Add("Voornaam: " + row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString() + ", Adres: " + row.Cells[3].Value.ToString() + ", Postcode: " + row.Cells[4].Value.ToString());
+                gegevens.Add("Naam: " + row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString() + ", Adres: " + row.Cells[3].Value.ToString() + ", Postcode: " + row.Cells[4].Value.ToString());
             }
             PrintDocument print = new PrintDocument();
             print.PrintPage += new PrintPageEventHandler(PrintImage);
             print.Print();
             gegevens.Clear();
         }
+
 
         public void PrintImage(object ob, PrintPageEventArgs e)
         {
